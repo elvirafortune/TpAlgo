@@ -97,14 +97,14 @@ int main()
     {
         // Сначала вводим дату рождения человека
         cin>> day >> month >> year;
-        birth = *new Date(day, month, year+18, true); //нам важны их даты начиная с 18 лет
+        birth =  Date(day, month, year+18, true); //нам важны их даты начиная с 18 лет
         // Затем дату смерти
         cin>> day >> month >> year;
-        death = *new Date(day, month, year, false);
+        death =  Date(day, month, year, false);
         if ( death <= birth )
             continue;
-        if ( *new Date(birth.day, birth.month, birth.year+62, true) < death )// если они не умерли раньше 80 лет
-            death = *new Date(birth.day, birth.month, birth.year+62, false);
+        if ( Date(birth.day, birth.month, birth.year+62, true) < death )// если они не умерли раньше 80 лет
+            death = Date(birth.day, birth.month, birth.year+62, false);
         
         mas[count] = birth; 
         mas[count + 1] = death;
